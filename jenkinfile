@@ -9,7 +9,7 @@ stages
 
  stage('execute unit test framework')
  {steps {withAnt(installation: 'Ant_Home', jdk: 'java_Home') {
-    sh 'ant test'
+    sh 'gradle test'
 } } 
 
 }}}
