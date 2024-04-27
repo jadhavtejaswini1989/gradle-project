@@ -1,0 +1,15 @@
+pipeline
+{
+agent any
+stages
+{
+ stage('scm checkout: download code from github')
+ {steps { git branch: 'master', url: 'https://github.com/jadhavtejaswini1989/mavenproject.git'  }}
+
+
+ stage('execute unit test framework')
+ {steps {withAnt(installation: 'Ant_Home', jdk: 'java_Home') {
+    sh 'ant test'
+} } 
+
+}}}
